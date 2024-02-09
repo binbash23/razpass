@@ -9,27 +9,27 @@
 set -e
 ADHOC_WIFI_PASSWORD='razpassrazpass'
 
-echo -e "Set hostname to razpass... "
+echo -n "Set hostname to razpass... "
 hostname razpass
 echo "OK"
 
-echo -e "Clear /etc/motd... "
+echo -n "Clear /etc/motd... "
 echo > /etc/motd
 echo "OK"
 
-echo -e "Enable ssh server... "
+echo -n "Enable ssh server... "
 systemctl enable ssh"
 echo "OK"
 
-echo -e "Enable ssh server... "
+echo -n "Enable ssh server... "
 systemctl enable ssh"
 echo "OK"
 
-echo -e "Create ad-hoc wifi network with password ${ADHOC_WIFI_PASSWORD}... "
+echo -n "Create ad-hoc wifi network with password ${ADHOC_WIFI_PASSWORD}... "
 nmcli device wifi hotspot ifname wlan0 ssid razpass password ${ADHOC_WIFI_PASSWORD}
 echo "OK"
 
-echo -e "Enable ad-hoc network as default on boot... "
+echo -n "Enable ad-hoc network as default on boot... "
 nmcli connection modify Hotspot connection.autoconnect true
 echo "OK"
 
