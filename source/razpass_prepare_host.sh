@@ -18,7 +18,7 @@ echo > /etc/motd
 echo "OK"
 
 echo -n "Enable ssh server... "
-systemctl enable ssh"
+systemctl enable ssh
 echo "OK"
 
 echo -n "Enable ssh server... "
