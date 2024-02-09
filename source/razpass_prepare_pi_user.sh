@@ -9,42 +9,42 @@
 #
 set -e
 
-echo -e "Set the password for the pi user: "
-passwd
+#echo -n "Set the password for the pi user: "
+#passwd
 
-echo -e "Make sure that we are in the /home/pi folder... "
+echo -n "Make sure that we are in the /home/pi folder... "
 cd /home/pi
 echo "OK"
 
-echo -e "Create p program folder... "
+echo -n "Create p program folder... "
 mkdir p
 cd p
 echo "OK"
 
-echo -e "Download p from github... "
+echo -n "Download p from github... "
 wget https://github.com/binbash23/p/raw/master/dist/raspberry/p
 echo "OK"
 
-echo -e "Make p executeable... "
+echo -n "Make p executeable... "
 chmod +x p
 echo "OK"
 
-echo -e "Create and prepare .ssh folder in home dir... "
+echo -n "Create and prepare .ssh folder in home dir... "
 cd ~
 mkdir .ssh
 chmod 700 .ssh/
 echo "OK"
 
-echo -e "Make p executeable... "
+echo -n "Make p executeable... "
 chmod +x p
 echo "OK"
 
 
-echo -e "Make p executeable... "
+echo -n "Make p executeable... "
 chmod +x p
 echo "OK"
 
-echo -e "Prepare ~/.bash_profile to run p on login... "
+echo -n "Prepare ~/.bash_profile to run p on login... "
 cat >> ~/.bash_profile << EOF
 # when bash starts as a login shell: run p on login and exit the bash when p exists:
 cd p
