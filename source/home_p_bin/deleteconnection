@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# 20240210 Jens Heine <binbash@gmx.net>
+#
+
+sudo nmcli connection delete ${1}
