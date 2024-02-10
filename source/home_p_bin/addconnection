@@ -12,6 +12,7 @@ read -p "Enter wifi password for ${WIFI_SSID}: " WIFI_PASSWORD
 sudo nmcli connection add type wifi ifname wlan0 ssid ${WIFI_SSID} connection.id ${WIFI_SSID}
 sudo nmcli connection modify ${WIFI_SSID} connection.autoconnect 1
 sudo nmcli connection modify ${WIFI_SSID} connection.autoconnect-priority 10
+sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless.powersave 2
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.key-mgmt wpa-psk
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.auth-alg open
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.psk ${WIFI_PASSWORD}
