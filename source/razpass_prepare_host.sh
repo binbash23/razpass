@@ -26,6 +26,7 @@ nmcli device wifi hotspot ifname wlan0 ssid razpass password ${ADHOC_WIFI_PASSWO
 
 echo "Enable ad-hoc network as default on boot... "
 nmcli connection modify Hotspot connection.autoconnect true
+nmcli connection modify Hotspot 802-11-wireless.powersave 2
 
 echo "Create the p user..."
 useradd -m p
