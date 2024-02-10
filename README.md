@@ -3,8 +3,10 @@ razpass is a project that provides a secure password store with it's own dedicat
 This password store can be used completely offline. 
 
 # The Idea
-* Keep password software off any mobile
-* Use a dedicated hardware
+* Get access to your passwords even offline
+* Do not use a password manager from google or apple or any other company
+* Use open source password safe software
+* Keep the password safe software off any mobile
 * Store your passwords decentralized
 * Synchronize your password database to multiple secure locations
 
