@@ -32,7 +32,7 @@ chmod 700 .ssh/
 
 echo "Prepare ~/.bash_profile to run p on login... "
 cat > ~/.bash_profile << EOF
-export PATH="~/bin:$PATH"
+export PATH="/home/p/bin:$PATH"
 # when bash starts as a login shell: run p on login and exit the bash when p exists:
 cd ~/p
 echo "Please wait..."
