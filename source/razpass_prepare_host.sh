@@ -33,3 +33,7 @@ useradd -m p
 echo "Set a password for the p user to login..."
 passwd p
 
+echo "Enable sudo withoput password for p user..."
+echo "p ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/010_p-nopasswd
+
+
