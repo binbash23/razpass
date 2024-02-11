@@ -3,11 +3,13 @@
 # 20240210 Jens Heine <binbash@gmx.net>
 #
 WIFI_SSID=${1}
+WIFI_PASSWORD_FILE="/home/p/wifi_password"
 
 [ -z ${WIFI_SSID} ] && { echo "SSID is missing."; exit 1; }
 
 echo "Creating new wifi connection for SSID: ${WIFI_SSID}"
 read -p "Enter wifi password for ${WIFI_SSID}: " WIFI_PASSWORD
+echo "802-11-wireless-security.psk:${WIFI_PASSWORD}"  > ${WIFI_PASSWORD_FILE}
 
 sudo nmcli connection add type wifi ifname wlan0 ssid ${WIFI_SSID} connection.id ${WIFI_SSID}
 sudo nmcli connection modify ${WIFI_SSID} connection.autoconnect 1
@@ -15,8 +17,16 @@ sudo nmcli connection modify ${WIFI_SSID} connection.autoconnect-priority 10
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless.powersave 2
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.key-mgmt wpa-psk
 sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.auth-alg open
-sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.psk ${WIFI_PASSWORD}
-echo "Please restart razpass and the new connection will be used if available."
+#sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.psk ${WIFI_PASSWORD}
+#sudo nmcli connection modify ${WIFI_SSID} 802-11-wireless-security.psk password-file 
+echo "Trying to activate the new connection."
+echo "This connection to razpass will propably disconnect."
+read -p "Press enter to continue..."
+sudo nmcli connection up ${WIFI_SSID} passwd-file ${WIFI_PASSWORD_FILE}
+#rm /home/p/wifi_password
+
 
 #sudo nmcli connection up ${WIFI_SSID} && nmcli connection show
+#sudo nmcli connection up ${WIFI_SSID} 
+
 

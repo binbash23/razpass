@@ -35,6 +35,9 @@ cat > ~/.bash_profile << EOF
 # Source .bashrc
 [ -f ~/.bashrc ] && . ~/.bashrc
 
+# remove eventually existing wifi-pass files
+[ -f ~/wifi_password ] && rm ~/wifi_password
+
 # export ~/bin to PATH
 export PATH="/home/p/bin:\$PATH"
 
