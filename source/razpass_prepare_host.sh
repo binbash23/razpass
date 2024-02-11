@@ -22,10 +22,12 @@ echo "Enable ssh server... "
 systemctl enable ssh
 
 echo "Create ad-hoc wifi network with password ${ADHOC_WIFI_PASSWORD}... "
-nmcli device wifi hotspot ifname wlan0 ssid razpass password ${ADHOC_WIFI_PASSWORD}
+nmcli device wifi hotspot ifname wlan0 con-name Hotspot ssid razpass password ${ADHOC_WIFI_PASSWORD}
 
 echo "Enable ad-hoc network as default on boot... "
 nmcli connection modify Hotspot connection.autoconnect true
+
+echo "Disable power save feature on wifi..."
 nmcli connection modify Hotspot 802-11-wireless.powersave 2
 
 echo "Create the p user..."
