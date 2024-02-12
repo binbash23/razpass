@@ -7,7 +7,8 @@
 #
 # This script must be run as p user on the raspberry pi.
 #
-set -e
+#set -e
+[ `whoami` != "p" ] && { echo "You are not the p user. You should run this script like this: su p $0"; exit 1; }
 
 echo "Create ~/bin folder..."
 mkdir ~/bin
@@ -48,4 +49,5 @@ echo "Please wait..."
 exit
 
 EOF
+
 

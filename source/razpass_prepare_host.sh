@@ -18,9 +18,6 @@ echo > /etc/motd
 echo "Enable ssh server... "
 systemctl enable ssh
 
-echo "Enable ssh server... "
-systemctl enable ssh
-
 echo "Create ad-hoc wifi network with password ${ADHOC_WIFI_PASSWORD}... "
 nmcli device wifi hotspot ifname wlan0 con-name Hotspot ssid razpass password ${ADHOC_WIFI_PASSWORD}
 
