@@ -10,7 +10,7 @@ set -e
 ADHOC_WIFI_PASSWORD='razpassrazpass'
 
 echo "Set hostname to razpass... "
-hostname razpass
+hostnamectl set-hostname razpass
 
 echo "Clear /etc/motd... "
 echo > /etc/motd
