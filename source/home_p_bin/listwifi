@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# 20240210 Jens Heine <binbash@gmx.net>
+#
+
+nmcli device wifi rescan
+nmcli device wifi list
