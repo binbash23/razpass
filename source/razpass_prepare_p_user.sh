@@ -20,11 +20,13 @@ echo "Create p program folder... "
 mkdir ~/p
 cd ~/p
 
-echo "Download p from github... "
-wget https://github.com/binbash23/p/raw/master/dist/raspberry/p
+[ -f ./p ] || {
+	echo "Download p from github... "
+	wget https://github.com/binbash23/p/raw/master/dist/raspberry/p
+	echo "Make p executeable... "
+	chmod +x ./p
+}
 
-echo "Make p executeable... "
-chmod +x ./p
 
 echo "Create and prepare .ssh folder in home dir... "
 cd ~
