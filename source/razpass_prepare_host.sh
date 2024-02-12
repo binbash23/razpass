@@ -12,6 +12,12 @@ ADHOC_WIFI_PASSWORD='razpassrazpass'
 echo "Set hostname to razpass... "
 hostnamectl set-hostname razpass
 
+echo "Set swap file"
+sed  -i 's/CONF_SWAPSIZE=100/CONF_SWAPSIZE=2048/g' /etc/dphys-swapfile
+service dphys-swapfile restart
+service dphys-swapfile status
+free -m
+
 echo "Clear /etc/motd... "
 echo > /etc/motd
 
