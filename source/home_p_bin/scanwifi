@@ -3,5 +3,5 @@
 # 20240210 Jens Heine <binbash@gmx.net>
 #
 
-nmcli device wifi rescan
+sudo nmcli device wifi rescan
 nmcli device wifi list
