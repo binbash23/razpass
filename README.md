@@ -6,15 +6,18 @@ razpass is a project that provides a secure password store with it's own dedicat
 This password store can be used completely offline. 
 
 # The Idea
-* Get access to your passwords even offline
-* Do not use a password manager from google or apple or any other company
+I want to:
+* Get access to my passwords even offline
+* Not use a password manager from google or apple or any other company
 * Use open source password safe software
-* Keep the password safe software off any mobile
-* Store your passwords decentralized
-* Synchronize your password database to multiple secure locations
+* Keep the password software off from any mobile
+* Store my passwords decentralized
+* Synchronize my password database to multiple secure locations in the net and local
+* Not use two factor authentification
+
 
 # The Solution
-I combined the password database software called [p](https://github.com/binbash23/p) with a customized raspberry pi zero 2w (I call it razpass). The result is a tiny device which contains all your passwords for use anywhere.
+I combined the password database software called [p](https://github.com/binbash23/p) with a customized raspberry pi zero 2w (I call it razpass). The result is a tiny device which contains all your passwords. You can access the passwords from any device that can connect to a wifi and can open a ssh connection - so from any computer, laptop, mobile, tablet, ...
 # Usage
 You just plug in the razpass device into any usb plug to get power.
 A wlan called "razpass" will appear soon. Then you connect to the wlan with your mobile (or any other device) and access the password database software with ssh (on the mobile I use "Termius").
