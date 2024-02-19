@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# 20240219 Jens Heine <binbash@gmx.net>
+#
+#
+
+set -e
+echo ">>> Updating razpass installation..."
+read -p "<Press enter to start or ctrl-c to cancel>"
+
+echo ">>> Creating temporary directory..."
+cd ~
+[ -d tmp ] || mkdir tmp
+cd tmp
+
+echo ">>> Clean eventually existing old stuff..."
+[ -d razpass ] && rm -rf razpass
+
+echo ">>> Get razpass project from github..."
+git clone https://github.com/binbash23/razpass.git
+
+echo ">>> Copy the p user bin scripts..."
+cp -v razpass/source/home_p_bin/* ~/bin
+
+echo ">>> Update successful!"
+
