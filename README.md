@@ -21,4 +21,4 @@ A wlan called "razpass" will appear soon. Then you connect to the wlan with your
 For more detailed information, use the [wiki](https://github.com/binbash23/razpass/wiki).
 It is possible to add your personal wifi network information to the razpass device. On startup it will at first search for these known wifi networks and connect to them before it finally starts its own ad-hoc wifi network. When the razpass connects to your personal wifi at home for example, you cann connect to it with ssh and the device will have internet access. When the razpass has to start its own ad-hoc wifi net, it has no internet access and you can not synchronize the password database to other locations. You can also not update the p software when you use the razpass in ad-hoc wifi mode for sure.
 # Architecture
-[Razpass Setup Hotspot](https://github.com/binbash23/razpass/blob/master/docs/razpass_setup_hotspot.png)
+![Razpass Setup Hotspot](https://github.com/binbash23/razpass/blob/master/docs/razpass_setup_hotspot.png)
