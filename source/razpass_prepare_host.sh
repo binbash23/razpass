@@ -40,6 +40,16 @@ echo "Set a password for the p user to login..."
 passwd p
 
 echo "Enable sudo withoput password for p user..."
-echo "p ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/010_p-nopasswd
+cat > /etc/sudoers.d/010_p-nopasswd << EOF
+# 2024 Jens Heine <binbash@gmx.net>
+# razpass - Enable su without password for the p user
+p ALL=(ALL) NOPASSWD: ALL
+EOF
 
+echo "Enable dns to resolv razpass in Hotspot mode..."
+cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
+# 2024 Jens Heine <binbash@gmx.net>
+# razpass - dns resolution for the razpass name in Hotspot mode
+address=/razpass/10.42.0.1
+EOF
 
