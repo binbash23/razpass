@@ -26,7 +26,7 @@ It is possible to add your personal wifi network information to the razpass devi
 ![Razpass Setup WIFI](https://github.com/binbash23/razpass/blob/master/docs/razpass_setup_home_wifi.png)
 # Connect from Windows/Terminal
 ![Razpass Connect from windows/terminal](https://github.com/binbash23/razpass/blob/master/docs/razpass_connect_from_windows.png)
-# Connect from Mobile
-![Razpass Connect from mobile](https://github.com/binbash23/razpass/blob/master/docs/razpass_connect_from_mobile.jpg)
+# Connect from Android
+![Razpass Connect from android](https://github.com/binbash23/razpass/blob/master/docs/razpass_connect_from_android.jpg)
 
 
