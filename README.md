@@ -1,3 +1,6 @@
+2024 Jens Heine <binbash@gmx.net>
+https://github.com/binbash23/razpass/
+
 # razpass
 razpass is a project that provides a secure password store with it's own dedicated hardware.
 This password store can be used completely offline. 
