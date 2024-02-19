@@ -39,7 +39,7 @@ useradd -m p
 echo "Set a password for the p user to login..."
 passwd p
 
-echo "Enable sudo withoput password for p user..."
+echo "Enable sudo without password for p user..."
 cat > /etc/sudoers.d/010_p-nopasswd << EOF
 # 2024 Jens Heine <binbash@gmx.net>
 # razpass - Enable su without password for the p user
