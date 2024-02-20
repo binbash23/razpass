@@ -7,6 +7,10 @@
 # This script must be run as root user on the raspberry pi.
 #
 set -e
+
+[ `whoami` != "root" ] && { echo "You are not the root user. You should run this script like this sudo $0"; exit 1; }
+
+
 ADHOC_WIFI_PASSWORD='razpassrazpass'
 
 echo "Set hostname to razpass... "
