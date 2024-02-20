@@ -52,4 +52,5 @@ exit
 
 EOF
 
+echo ">>> DONE <<<"
 

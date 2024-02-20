@@ -57,3 +57,5 @@ cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
 address=/razpass/10.42.0.1
 EOF
 
+echo ">>> DONE <<<"
+
