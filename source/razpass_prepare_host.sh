@@ -57,8 +57,8 @@ cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
 address=/razpass/10.42.0.1
 EOF
 
-echo "Install some stuff..."
-apt-get install sqlite3
+#echo "Install some stuff..."
+#apt-get install sqlite3
 
 echo ">>> DONE <<<"
 
