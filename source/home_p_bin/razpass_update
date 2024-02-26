@@ -18,13 +18,13 @@ cd ~
 [ -d tmp ] || mkdir tmp
 cd tmp
 
-echo ">>> Clean eventually existing old stuff..."
+echo ">>> Cleaning eventually existing old stuff..."
 [ -d razpass ] && rm -rf razpass
 
-echo ">>> Get razpass project from github..."
+echo ">>> Cloning razpass project from github..."
 git clone https://github.com/binbash23/razpass.git
 
-echo ">>> Copy the p user bin scripts..."
+echo ">>> Copying the p scripts to the bin folder..."
 cp -v razpass/source/home_p_bin/* ~/bin
 
 echo "--------------------------"
