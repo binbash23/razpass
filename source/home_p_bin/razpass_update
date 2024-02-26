@@ -4,7 +4,6 @@
 #
 # Update some scripts in the razpass installation.
 #
-#
 #set -x
 set -e
 
