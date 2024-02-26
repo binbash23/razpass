@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # 20240219 Jens Heine <binbash@gmx.net>
+# 20240226 jens heine: self update fail safe
 #
 # Update some scripts in the razpass installation.
 #
