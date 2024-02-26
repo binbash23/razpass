@@ -5,8 +5,10 @@
 #
 
 set -e
+echo
 echo ">>> Updating razpass installation..."
-read -p "<Press enter to start or ctrl-c to cancel>"
+read -p "< Press enter to start or ctrl-c to cancel >"
+echo
 
 echo ">>> Creating temporary directory..."
 cd ~
@@ -22,5 +24,7 @@ git clone https://github.com/binbash23/razpass.git
 echo ">>> Copy the p user bin scripts..."
 cp -v razpass/source/home_p_bin/* ~/bin
 
-echo ">>> Update successful!"
+echo "--------------------------"
+echo ">>> Update successful! <<<"
+echo "--------------------------"
 

@@ -24,7 +24,7 @@ sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless-security.auth-alg op
 echo
 echo "> Trying to activate the new connection."
 echo "> This connection to razpass will propably disconnect."
-read -p "> Press enter to continue..."
+read -p "< Press enter to continue >"
 echo
 sudo nmcli connection up "${WIFI_SSID}" passwd-file "${WIFI_PASSWORD_FILE}"
 #rm /home/p/wifi_password
