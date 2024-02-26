@@ -5,8 +5,8 @@
 # Update some scripts in the razpass installation.
 #
 #
-set -x
-#set -e
+#set -x
+set -e
 
 echo
 echo "-------------------------------------"
@@ -28,6 +28,7 @@ echo ">>> Cloning razpass project from github..."
 git clone https://github.com/binbash23/razpass.git
 
 echo ">>> Copying the p scripts to the bin folder..."
+set +e
 cp -v ./razpass/source/home_p_bin/* ~/bin/
 
 echo "--------------------------"
