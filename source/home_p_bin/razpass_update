@@ -26,8 +26,13 @@ echo ">>> Cleaning eventually existing old stuff..."
 echo ">>> Cloning razpass project from github..."
 git clone https://github.com/binbash23/razpass.git
 
+# some tricky stuff because I will overrwite this script by a new version
+# If the git cloning contains this file (which it probably will) I delete
+# the running update script to change the inode no, so this script will not
+# get confused by getting new contents
+[ -f ./razpass/source/home_p_bin/razpass_update ] && rm ~/bin/razpass_update
+
 echo ">>> Copying the p scripts to the bin folder..."
-set +e
 cp -v ./razpass/source/home_p_bin/* ~/bin/
 
 echo "--------------------------"
