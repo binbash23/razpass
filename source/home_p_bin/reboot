@@ -2,4 +2,6 @@
 #
 # 20240210 Jens Heine <binbash@gmx.net>
 #
-sudo reboot
+sudo="sudo -h 127.0.0.1"
+
+$sudo reboot

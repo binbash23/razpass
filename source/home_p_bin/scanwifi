@@ -2,6 +2,7 @@
 #
 # 20240210 Jens Heine <binbash@gmx.net>
 #
+sudo="sudo -h 127.0.0.1"
 
-sudo nmcli device wifi rescan
+$sudo nmcli device wifi rescan
 nmcli device wifi list
