@@ -9,7 +9,7 @@ WIFI_PASSWORD_FILE="/home/p/wifi_password"
 
 echo
 echo "> Creating new wifi connection for SSID: "${WIFI_SSID}""
-read -p "> Enter wifi password for "${WIFI_SSID}": " WIFI_PASSWORD
+read -p "> Enter wifi password for '${WIFI_SSID}': " WIFI_PASSWORD
 echo
 echo "802-11-wireless-security.psk:"${WIFI_PASSWORD}""  > "${WIFI_PASSWORD_FILE}"
 
