@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# 20240226 Jens Heine <binbash@gmx.net>
+#
+# Rename the razpass device
+#
+#set -x
+set -e
+
+echo
+echo "Changing the name of the razpass."
+echo "Make shure that you use only alphanumerical characters"
+echo "for the new hostname!"
+read -p "Enter the new hostname: " NEW_HOSTNAME
+echo
+
+sudo hostnamectl set-hostname "${NEW_HOSTNAME}"
+
+echo "Enable dns to resolv razpass in Hotspot mode..."
+sudo cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
+# 2024 Jens Heine <binbash@gmx.net>
+# razpass - dns resolution for the razpass name in Hotspot mode
+address=/"${NEW_HOSTNAME}"/10.42.0.1
+EOF
+
