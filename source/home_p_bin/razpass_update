@@ -6,7 +6,10 @@
 
 set -e
 echo
-echo ">>> Updating razpass installation..."
+echo "-------------------------------------"
+echo "<<< Updating razpass installation >>>"
+echo "-------------------------------------"
+echo
 read -p "< Press enter to start or ctrl-c to cancel >"
 echo
 
