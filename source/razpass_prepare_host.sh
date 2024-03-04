@@ -6,7 +6,7 @@
 #
 # This script must be run as root user on the raspberry pi.
 #
-set -e
+#set -e
 
 [ `whoami` != "root" ] && { echo "You are not the root user. You should run this script like this sudo $0"; exit 1; }
 
@@ -25,8 +25,9 @@ free -m
 echo "Clear /etc/motd... "
 echo > /etc/motd
 
-echo "Enable ssh server... "
+echo "Enable and start ssh server... "
 systemctl enable ssh
+systemctl start ssh
 
 echo "Create ad-hoc wifi network with password '${ADHOC_WIFI_PASSWORD}'... "
 nmcli device wifi hotspot ifname wlan0 con-name Hotspot ssid razpass password "${ADHOC_WIFI_PASSWORD}"
