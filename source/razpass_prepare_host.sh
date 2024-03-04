@@ -44,12 +44,13 @@ useradd -m p
 echo "Set a password for the p user to login..."
 passwd p
 
-echo "Enable sudo without password for p user..."
+echo "Enable sudo without password for p user and set permissions of file..."
 cat > /etc/sudoers.d/010_p-nopasswd << EOF
 # 2024 Jens Heine <binbash@gmx.net>
 # razpass - Enable su without password for the p user
 p ALL=(ALL) NOPASSWD: ALL
 EOF
+chmod 0440 /etc/sudoers.d/010_p-nopasswd
 
 echo "Enable dns to resolv razpass in Hotspot mode..."
 cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
