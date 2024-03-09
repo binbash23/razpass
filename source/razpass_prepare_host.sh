@@ -38,6 +38,9 @@ nmcli connection modify Hotspot connection.autoconnect true
 echo "Disable power save feature on wifi..."
 nmcli connection modify Hotspot 802-11-wireless.powersave 2
 
+echo "Enable wake-on-wlan..."
+nmcli connection modify Hotspot 802-11-wireless.wake-on-wlan 2
+
 echo "Create the p user..."
 useradd -m p
 
