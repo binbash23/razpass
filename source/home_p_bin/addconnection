@@ -20,6 +20,7 @@ $sudo nmcli connection modify "${WIFI_SSID}" connection.autoconnect-priority 10
 $sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless.powersave 2
 $sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless-security.key-mgmt wpa-psk
 $sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless-security.auth-alg open
+$sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless.wake-on-wlan 2
 #$sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless-security.psk ${WIFI_PASSWORD}
 #$sudo nmcli connection modify "${WIFI_SSID}" 802-11-wireless-security.psk password-file 
 echo
