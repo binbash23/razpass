@@ -7,12 +7,13 @@
 # This script must be run as root user on the raspberry pi.
 #
 #set -e
+ADHOC_WIFI_PASSWORD='razpassrazpass'
 
 [ `whoami` != "root" ] && { echo "You are not the root user. You should run this script like this sudo $0"; exit 1; }
 
-
-ADHOC_WIFI_PASSWORD='razpassrazpass'
-
+#
+# os stuff
+#
 echo "Set hostname to razpass... "
 hostnamectl set-hostname razpass
 
@@ -24,6 +25,33 @@ free -m
 
 echo "Clear /etc/motd... "
 echo > /etc/motd
+
+#
+# p user stuff
+#
+echo "Create the p user..."
+useradd -m p
+
+echo "Set a password for the p user to login..."
+passwd p
+
+echo "Enable sudo without password for p user and set permissions of file..."
+cat > /etc/sudoers.d/010_p-nopasswd << EOF
+# 2024 Jens Heine <binbash@gmx.net>
+# razpass - Enable su without password for the p user
+p ALL=(ALL) NOPASSWD: ALL
+EOF
+chmod 0440 /etc/sudoers.d/010_p-nopasswd
+
+#
+# network stuff
+#
+echo "Enable dns to resolv razpass in Hotspot mode..."
+cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
+# 2024 Jens Heine <binbash@gmx.net>
+# razpass - dns resolution for the razpass name in Hotspot mode
+address=/razpass/10.42.0.1
+EOF
 
 echo "Enable and start ssh server... "
 systemctl enable ssh
@@ -40,27 +68,6 @@ nmcli connection modify Hotspot 802-11-wireless.powersave 2
 
 echo "Enable wake-on-wlan..."
 nmcli connection modify Hotspot 802-11-wireless.wake-on-wlan 2
-
-echo "Create the p user..."
-useradd -m p
-
-echo "Set a password for the p user to login..."
-passwd p
-
-echo "Enable sudo without password for p user and set permissions of file..."
-cat > /etc/sudoers.d/010_p-nopasswd << EOF
-# 2024 Jens Heine <binbash@gmx.net>
-# razpass - Enable su without password for the p user
-p ALL=(ALL) NOPASSWD: ALL
-EOF
-chmod 0440 /etc/sudoers.d/010_p-nopasswd
-
-echo "Enable dns to resolv razpass in Hotspot mode..."
-cat > /etc/NetworkManager/dnsmasq-shared.d/razpass.conf << EOF
-# 2024 Jens Heine <binbash@gmx.net>
-# razpass - dns resolution for the razpass name in Hotspot mode
-address=/razpass/10.42.0.1
-EOF
 
 #echo "Install some stuff..."
 #apt-get install sqlite3
